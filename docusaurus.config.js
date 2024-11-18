@@ -47,14 +47,14 @@ module.exports = async function createConfigAsync() {
           additionalLanguages: ['solidity', 'typescript', 'bash', 'json', 'javascript', 'yaml', 'toml'], // https://docusaurus.io/docs/markdown-features/code-blocks#supported-languages
         },
         navbar: {
-          title: 'BuilderNet Blog',
+          title: 'BuilderNet',
           logo: {
             alt: 'Flashbots Logo',
             src: 'img/logo.png',
-            target: '/blog/',
           },
           items: [
-            { to: 'https://buildernet.github.io/docs', label: 'Docs', position: 'left' }, // or position: 'right'
+            { to: '/docs', label: 'Docs', position: 'left' }, // or position: 'right'
+            { to: '/blog', label: 'Blog', position: 'left' }, // or position: 'right'
             {
               href: 'https://github.com/orgs/buildernet/repositories',
               label: 'GitHub',
@@ -68,8 +68,13 @@ module.exports = async function createConfigAsync() {
       [
         '@docusaurus/preset-classic',
         {
+          docs: {
+            /* docs plugin options */
+            routeBasePath: 'docs',
+            id: 'docs',
+          },
           blog: {
-            path: 'content',
+            path: 'blog',
             // Simple use-case: string editUrl
             // editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
             // Advanced use-case: functional editUrl
@@ -80,7 +85,7 @@ module.exports = async function createConfigAsync() {
             blogDescription: 'Blog',
             blogSidebarCount: 5,
             blogSidebarTitle: 'All our posts',
-            routeBasePath: '/',
+            routeBasePath: 'blog',
             include: ['**/*.{md,mdx}'],
             exclude: [
               '**/_*.{js,jsx,ts,tsx,md,mdx}',
