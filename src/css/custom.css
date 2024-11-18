@@ -1,0 +1,249 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: CMU-Serif;
+  src: url('/fonts/cmunbx.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: CMU-Serif;
+  src: url('/fonts/cmunci.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: CMU-Serif;
+  src: url('/fonts/cmunrm.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  --ifm-color-primary: #04f;
+  --ifm-color-content: var(--ifm-color-emphasis-800);
+  --ifm-code-font-size: 95%;
+  --ifm-menu-link-padding-vertical: 8px;
+}
+
+.theme-doc-sidebar-item-category-level-1 {
+  margin: 10px 0 28px;
+}
+
+.menu__list {
+  font-weight: normal !important;
+  margin-top: 0;
+}
+
+.menu__link {
+  padding: 6px;
+}
+
+.menu__link--sublist {
+  font-weight: bold;
+}
+
+.theme-doc-sidebar-item-category-level-2 a {
+  font-weight: normal !important;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #9af;
+  --ifm-heading-color: #fff;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: #484d5b;
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+h2 {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+p,
+ol,
+ul,
+a,
+b,
+span,
+div {
+  font-size: 16px;
+}
+
+.menu__link--sublist::after {
+  background: var(--ifm-menu-link-sublist-icon) 50%/1.5rem 1.5rem;
+  opacity: 0.75;
+}
+
+/* Hides specific pieces from the Technical Specs for the BuilderNet docs */
+
+.hide-in-docs {
+  display: none;
+}
+
+/* Custom styles for warnings from the specs */
+
+.warning {
+  background-color: #f9ddb5;
+  border: 1px solid #ffac33;
+  border-radius: 8px;
+}
+
+.warning p {
+  padding: 20px 20px 0;
+}
+
+[data-theme='dark'] .warning {
+  background-color: #f79506;
+  border: 1px solid #fbe7c9;
+}
+
+/* Custom intro page styles */
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.intro-link:hover {
+  text-decoration: none;
+}
+
+.intro-block {
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  gap: 12px;
+  flex: 1 0 0px;
+  border-radius: 4px;
+  border: 1px solid #00000014;
+  transition:
+    background-color 0.3s ease 0s,
+    color 0.3s ease 0s;
+  background-color: #fafaf9;
+}
+
+.intro-block:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .intro-block:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .intro-block {
+  border: 1px solid #f0f0f0;
+  transition:
+    background-color 0.3s ease 0s,
+    color 0.3s ease 0s;
+  background-color: #242526;
+}
+
+[data-theme='dark'] .intro-heading {
+  color: #fafaf9;
+}
+
+[data-theme='dark'] .intro-desc {
+  color: #fafaf9;
+}
+
+.intro-image {
+  display: flex;
+  padding: 4px;
+  align-items: center;
+}
+
+[data-theme='dark'] path {
+  stroke: white;
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1 0 0;
+}
+
+.intro-heading {
+  color: #000;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.intro-desc {
+  color: #000000b2;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+footer {
+  padding-top: 3em;
+  border-top: 1px solid #f0f0f0;
+}
+
+@media only screen and (max-width: 1120px) {
+  .intro-grid {
+    grid-template-columns: none;
+  }
+}
+
+/* Override DocCardList styles */
+
+.card {
+  color: var(--ifm-link-hover-color);
+}
+
+[data-theme='dark'] .card {
+  color: #fff;
+}
+
+
+h1,
+h2,
+h3 {
+  /* font-weight: bold; */
+  /* font-family: "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "system-ui", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" */
+}
+
+hr {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200)
+}
+
+hr.clean {
+  margin-top: 2.5em;
+}
+
+article img {
+  max-width: 100%;
+  border: 1px solid #cdcdcd;
+  border-radius: 6px;
+  padding: 2em;
+  margin-bottom: 1em;
+
+}
